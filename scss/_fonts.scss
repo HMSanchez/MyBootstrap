@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
+
+$code-font-familiy: 'IBM Plex Mono', monospace;
+
+$font-family: 'Tajawal', sans-serif;
+$linkFontSize: 18px; 
+$buttonFontSize: 14px;
+@function font-weight($keyword: normal) {
+	$conversion-map: (
+	  thin: 100,
+	  hairline: 100,
+	  extra light: 200,
+	  extralight: 200,
+	  ultra light: 200,
+	  ultralight: 200,
+	  light: 300,
+	  book: 300,
+	  demi: 300,
+	  normal: 400,
+	  regular: 400,
+	  medium: 500,
+	  semi bold: 600,
+	  semibold: 600,
+	  demi bold: 600,
+	  demibold: 600,
+	  bold: 700,
+	  extra bold: 800,
+	  extrabold: 800,
+	  ultra bold: 800,
+	  ultrabold: 800,
+	  black: 900,
+	  heavy: 900,
+	  fat: 900,
+	  poster: 900,
+	  extra black: 900,
+	  extrablack: 900,
+	  ultra black: 900,
+	  ultrablack: 900
+	);
+
+	@if not map-has-key($conversion-map, $keyword) {
+		@error "Unsupported `font-weight` keyword `#{$keyword}`";
+        
+        @return null;
+	}
+    
+    @return map-get($conversion-map, $keyword);
+}
+
+@mixin font-weight($keyword) {
+    font-weight: font-weight($keyword);
+}
+
+
+///font weight application
+.one-zero-zero {
+  @include font-weight(thin);
+  @include font-weight(hairline);
+}
+
+.two-zero-zero {
+  @include font-weight(extra light);
+  @include font-weight(extralight);
+  @include font-weight(ultra light);
+  @include font-weight(ultralight);
+}
+
+.three-zero-zero {
+  @include font-weight(light);
+  @include font-weight(book);
+  @include font-weight(demi);
+}
+
+.four-zero-zero {
+  @include font-weight(normal);
+  @include font-weight(regular);
+}
+
+.five-zero-zero {
+  @include font-weight(medium);
+}
+
+.six-zero-zero {
+  @include font-weight(semi bold);
+  @include font-weight(semibold);
+  @include font-weight(demi bold);
+  @include font-weight(demibold);
+}
+
+.seven-zero-zero {
+  @include font-weight(bold);
+}
+
+.eight-zero-zero {
+  @include font-weight(extra bold);
+  @include font-weight(extrabold);
+  @include font-weight(ultra bold);
+  @include font-weight(ultrabold);
+}
+
+.nine-zero-zero {
+  @include font-weight(black);
+  @include font-weight(heavy);
+  @include font-weight(fat);
+  @include font-weight(poster);
+  @include font-weight(extra black);
+  @include font-weight(extrablack);
+  @include font-weight(ultra black);
+  @include font-weight(ultrablack);
+}
+

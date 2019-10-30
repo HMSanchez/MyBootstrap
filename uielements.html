@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Elements</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="scss/main-styles.css">
+</head>
+
+<body>
+    <nav class="mynav">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="uielements.html" class="active">UI Elements</a>
+            </li>
+            <li>
+                <a href="otherelements.html">More</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="header-container">
+        <header class="wrapper clearfix ">
+            <h1 id="title" class="one-zero-zero">Elements</h1>
+
+            <h3 class="one-zero-zero wrap">Nav</h3>
+            <h4 class="wrap">HTML</h4>
+            <div class="code-container wrap">
+                <code class="codes">
+
+                            &lt nav class="mynav" &gt 
+                                    &lt ul &gt 
+                                        &lt li &gt 
+                                            &lt a href="index.html" class="active" &gt Home &lt /a &gt 
+                                        &lt /li&gt 
+                                        &lt li &gt 
+                                            &lt a href="uielements.html" &gt UI Elements &lt /a &gt 
+                                        &lt /li &gt 
+                                        &lt li &gt 
+                                            &lt a href="otherelements.html" &gt More &lt /a &gt 
+                                        &lt /li &gt 
+                                    &lt /ul &gt 
+                                &lt /nav &gt 
+                </code>
+            </div>
+        </header>
+    </div>
+    <div id="main-container2">
+
+        <h3 class="one-zero-zero wrap">Links</h3>
+        <div class="wrap">
+            <a href="index.html" class="wrap">My Link</a>
+        </div>
+        <h4 class="wrap">HTML</h4>
+        <div class="code-container wrap">
+            <code class="codes">
+
+                            &lt a href="index.html" &gt My Link &lt /a &gt
+            </code>
+        </div>
+        <h3 class="one-zero-zero wrap">Button</h3>
+        <div class="wrap">
+            <button class="button">
+                <span>Hover </span>
+            </button>
+            <button class="otherbutton">Submit</button>
+        </div>
+        <h4 class="wrap">HTML</h4>
+        <div class="code-container wrap">
+
+            <code class="codes">
+                            
+            &lt button class="otherbutton" &gt Submit &lt /button &gt
+            </code>
+        </div>
+        <h3 class="one-zero-zero wrap"> Table</h3>
+        <table class="table mytable mytable-rounded table-hover">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Super Hero</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Peter</td>
+                    <td>Parker</td>
+                    <td>Spider-Man</td>
+                </tr>
+                <tr>
+                    <td>Tony</td>
+                    <td>Stark</td>
+                    <td>Iron-Man</td>
+                </tr>
+                <tr>
+                    <td>Peter</td>
+                    <td>Quill</td>
+                    <td>Star-Lord</td>
+                </tr>
+                <tr>
+                    <td>Steve</td>
+                    <td>Rogers</td>
+                    <td>Captain America</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="wrap">HTML</h4>
+        <div class="code-container wrap">
+            <code class="codes">
+
+                                 &lt table class="table mytable mytable-rounded table-hover" &gt 
+                                         &lt thead &gt 
+                                             &lt tr &gt 
+                                                 &lt th &gt First Name &lt /th &gt 
+                                                 &lt th &gt Last Name &lt /th &gt 
+                                                 &lt th &gt Super Hero &lt /th &gt 
+                                             &lt /tr &gt 
+                                         &lt /thead &gt 
+                                         &lt tbody &gt 
+                                             &lt tr &gt 
+                                                 &lt td &gt Peter &lt /td &gt 
+                                                 &lt td &gt Parker &lt /td &gt 
+                                                 &lt td &gt Spider-Man &lt /td &gt 
+                                             &lt /tr &gt 
+                                             &lt tr &gt 
+                                                 &lt td &gt Tony &lt /td &gt 
+                                                 &lt td &gt Stark &lt /td &gt 
+                                                 &lt td &gt Iron-Man &lt /td &gt 
+                                             &lt /tr &gt 
+                                             &lt tr &gt 
+                                                 &lt td &gt Peter &lt /td &gt 
+                                                 &lt td &gt Quill &lt /td &gt 
+                                                 &lt td &gt Star-Lord &lt /td &gt 
+                                             &lt /tr &gt 
+                                             &lt tr &gt 
+                                                 &lt td &gt Steve &lt /td &gt 
+                                                 &lt td &gt Rogers &lt /td &gt 
+                                                 &lt td &gt Captain America &lt /td &gt 
+                                             &lt /tr &gt 
+                                         &lt /tbody &gt 
+                                     &lt /table &gt 
+
+            </code>
+        </div>
+        <h3 class="one-zero-zero wrap"> Image</h3>
+        <div id="ImageContainer">
+            <img src="images/owl.jpg" alt="Owl" width="1000" height="100">
+        </div>
+        <h4 class="wrap">HTML</h4>
+        <div class="code-container wrap">
+            <code class="codes">
+                                
+                                &lt div id="ImageContainer" &gt
+                                     &lt img src="images/owl.jpg" alt="Owl" width="1000" height="100" &gt
+                                    &lt /div &gt
+                                    </code>
+        </div>
+
+        <h3 class="one-zero-zero wrap">Form</h3>
+        <div class="form-style">
+            <h2>Login to your account</h2>
+            <form>
+                <input type="text" name="field1" placeholder="Full Name" />
+                <input type="email" name="field2" placeholder="Email" />
+                <input type="url" name="field3" placeholder="Website" />
+                <textarea placeholder="Message" onkeyup="adjust_textarea(this)"></textarea>
+                <input type="button" class="button" value="Send Message" />
+            </form>
+        </div>
+        <h4 class="wrap">HTML</h4>
+        <div class="code-container wrap">
+            <code class="codes">
+                                 
+                                 &lt div class="form-style" &gt
+                                         &lt h2 &gtLogin to your account &lt /h2 &gt
+                                         &lt form &gt
+                                             &lt input type="text" name="field1" placeholder="Full Name" / &gt
+                                             &lt input type="email" name="field2" placeholder="Email" / &gt
+                                             &lt input type="url" name="field3" placeholder="Website" / &gt
+                                             &lt textarea placeholder="Message" onkeyup="adjust_textarea(this)" &gt &lt /textarea &gt
+                                             &lt input type="button" class="button" value="Send Message" / &gt
+                                         &lt /form &gt
+                                     &lt /div &gt
+            </code>
+        </div>
+
+    </div>
+    <h3 class="one-zero-zero wrap">Code</h3>
+    <div class="code-container wrap">
+        <code class="codes wrap">Example</code>
+    </div>
+    <h4 class="wrap">HTML</h4>
+    <div class="code-container wrap">
+        <code class="codes">
+                        
+                        &lt div class="code-container wrap" &gt                        
+                        &lt code class="codes" Example &gt  
+                        &lt / code &gt
+                        &lt /div &gt
+        </code>
+    </div>
+
+    <h3 class="one-zero-zero wrap">Footer</h3>
+    <h4 class="wrap">HTML</h4>
+    <div class="code-container wrap">
+        <code class="codes">
+                        &lt footer class="wrapper footer" &gt
+                                &lt h3 &gt footer &lt /h3 &gt
+                            &lt /footer &gt
+        </code>
+    </div>
+
+    <div id="footer-container">
+        <footer class="wrapper footer">
+            <h3>footer</h3>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

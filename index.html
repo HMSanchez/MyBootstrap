@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=2s">
+
+    <title>My Framework</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="scss/main-styles.css">
+
+</head>
+
+<body onload="load()">
+    <nav class="mynav">
+        <ul>
+            <li>
+                <a href="index.html" class="active">Home</a>
+            </li>
+            <li>
+                <a href="uielements.html">UI Elements</a>
+            </li>
+            <li>
+                <a href="otherelements.html">More</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="header-container">
+        <header class="wrapper clearfix ">
+            <h1 id="title" class="one-zero-zero">Home</h1>
+
+        </header>
+    </div>
+    <div id="main-container">
+        <div id="main" class="wrapper clearfix">
+
+            <article>
+                <h1 class="wrap">Modal</h1>
+                <header class="wrap">
+                    <button id="openButton" class="button" onclick="openModal()">Display modal</button>
+                    <div class="modal" id="modal">
+                        <div class="wrapper">
+                            <div class="message">
+                                <h2>This is a modal.</h2>
+                                <p>A little modal.</p>
+                                <button class="button" onclick="closeModal()">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <h2 class="wrap">Slideshow</h2>
+                <div class="arrow arrow-left">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </div>
+                <div class="arrow arrow-right">
+                    <i class="fas fa-chevron-circle-right"></i>
+                </div>
+                <section class="wrap">
+                    <div class="container">
+
+                        <img src="images/apricot.jpg" alt="">
+                        <img src="images/beverage.jpg" alt="">
+                        <img src="images/bloom.jpg" alt="">
+                        <img src="images/jelly.jpg" alt="">
+
+                        <div class="dots">
+
+                            <div class="dot">
+                                <i class="far fa-dot-circle"></i>
+                            </div>
+                            <div class="dot">
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <div class="dot">
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <div class="dot">
+                                <i class="far fa-circle"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <footer>
+                    <h3 class="wrap">article footer h3</h3>
+
+                          
+                </footer>
+            </article>
+
+            <aside>
+                <h3 class="wrap">aside</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc
+                    vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat
+                    est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper
+                    lorem dapibus velit suscipit ultrices.</p>
+            </aside>
+
+        </div>
+        <!-- #main -->
+    </div>
+
+    <!-- #main-container -->
+
+    <div id="footer-container">
+        <footer class="wrapper footer">
+            <h3>footer</h3>
+        </footer>
+    </div>
+    <script type="text/javascript" src="quotes.json"></script>
+    <script type="text/javascript" src="menu.json"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

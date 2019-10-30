@@ -1,0 +1,551 @@
+///miXins
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+
+
+
+///Header
+header {
+    @include font-weight(thin);
+    margin:5px;
+}
+
+///P
+p {
+    margin: 5px;
+}
+
+.mynav {
+    & ul
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: darken($color3,30%);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        & li {
+            display: inline-block;    
+            margin: 5px;
+          & a {
+@extend a;
+            }
+        }
+    }
+}
+///Link
+a {
+    color: $color1;
+    padding: 2px;
+text-decoration:none;
+
+font-size: $linkFontSize;
+//  @include transition(.9s);
+margin: auto;
+    &:hover{
+        background-color: darken($color2, 60%);
+
+    }
+    &:visited {
+// background: $color2;
+    }
+    &.active{
+background-color: darken($color2, 60%);
+        
+    }
+}
+
+
+///Buttons
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: $color1 +35;
+    border: none;
+    color: $color1 * -2;
+    text-align: center;
+    font-size: $buttonFontSize;
+    padding: 10px;
+    letter-spacing: 1.5px;    
+    height: 45px;
+    transition: all 0.7s;
+    box-shadow: black 2px solid;
+    cursor: pointer;
+    margin: 5px;
+    span{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        @include transition(.7s);
+      &:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.7s;
+      }
+    } 
+    &:hover span{
+    padding-right: 25px;
+        &:after {
+            opacity: 1;
+            right: 0;
+        }        
+    } 
+  }
+  
+
+
+.block-wrap {
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .otherbutton {
+    height: 45px;
+    font-size: $buttonFontSize;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    padding: 10px;
+    font-weight: font-weight(medium);
+    color: #000;
+    background-color: $color1;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+@include transition(1s);
+// transition: all 0.7s ease 0s;
+    cursor: pointer;
+    outline: none;
+        &:hover {
+            background-color: darken($color3,30%);
+            box-shadow: 0px 15px 20px $color1;
+            color: #fff;
+            transform: translateY(-7px);
+        }
+    }
+
+///Image
+img {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border: 5px inset saturate($color: $color2, $amount: 10);
+}
+#ImageContainer{
+    margin: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+  
+
+
+///Headings
+$base-font-size: 12px;
+$heading-scale: 5; // amount of px headings grow from h6 to h1
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: $base-font-size + $heading-scale * (6 - $i);
+    // margin: 5px;
+  }
+}
+.headings {
+    display: inline-flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+///Tables
+// table {
+//     border-collapse: collapse;
+//     width: 100%;
+// }
+
+// th, td {
+//     text-align: left;
+//     padding: 8px;
+// }
+
+// tr:nth-child(even){background-color: #fab}
+// tr:nth-child(odd){background-color: #fff}
+
+// th {
+//     background-color: #4CAF50;
+//     color: white;
+// }
+.mytable {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+margin: 0 auto;
+width: 80%;
+}
+.mytable thead th {
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.mytable tbody td {
+    border: solid 1px #DDEEEE;
+    color: #fff;
+    padding: 10px;
+}
+.mytable-rounded {
+    border: none;
+}
+.mytable-rounded thead th {
+    background-color: $color1;
+    border: none;
+    color: #333;
+}
+.mytable-rounded thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+.mytable-rounded thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+.mytable-rounded tbody td {
+    border: none;
+    border-top: solid 1px $color1 + 35;
+    background-color: $color3 - 10;
+}
+.mytable-rounded tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+.mytable-rounded tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+///Form
+.form-style{
+    width: 500px;
+    padding: 30px;
+    background: $color1 + 55;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+h2{
+    background: saturate($color1, 40);
+    text-transform: uppercase;
+    color: $color1 - 150;
+    font-size: $linkFontSize;
+    font-weight: font-weight(thin);
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+textarea {
+    resize:none;
+    overflow: hidden;
+}
+
+}
+
+.form-style input[type="text"],
+.form-style input[type="date"],
+.form-style input[type="datetime"],
+.form-style input[type="email"],
+.form-style input[type="number"],
+.form-style input[type="search"],
+.form-style input[type="time"],
+.form-style input[type="url"],
+.form-style input[type="password"],
+.form-style textarea,
+.form-style select 
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font-size: $buttonFontSize+2;
+    height: 45px;
+}
+
+
+///Footer
+.footer{
+    border: 5px ridge $color3;
+}
+
+///Code Tag
+.codes{
+display: flex;
+white-space: pre-wrap;
+margin: 10px;
+padding: 5px;
+background: $color1;
+}
+.code-container {
+    margin: 5px;
+    padding: 10px;
+}
+
+///Wells
+.wells{
+    background: $color2;
+    padding: 11px;
+    border: 2px solid $color3;
+    border-radius: 10px;
+text-align: center;
+margin: 5px;
+&-sm {
+        background: $color2;
+        padding: 5px;
+        border: 2px solid $color3;
+text-align: center;
+border-radius: 10px;
+margin: 5px;
+
+    }
+    &-lg {
+        background: $color2;
+        text-align: center;
+
+        margin: 5px;
+        padding: 16px;
+        border: 2px solid $color3;
+        border-radius: 10px;
+    }
+}
+.wells-container {
+    display: block;
+height: 100%;
+width: auto;
+
+    align-items: center;
+    justify-content: center;
+}
+
+///Alerts
+.alert{
+    background: $color2;
+    padding: 11px;
+    border: 2px solid $color3;
+    border-radius: 10px;
+text-align: center;
+margin: 5px;
+
+    &-light {
+        background: lighten($color: $color1, $amount: 100);
+        
+    }
+    &-dark{
+        background: darken($color: $color3, $amount: 100);
+        color: $color1;
+    }
+}
+///MyDiv
+#myDiv{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background: lighten($color2,20%);
+    @include transition(.2s);
+    @include transition-property(width,height);
+    @include transition-delay(.1s);
+&:hover {
+width: 300px;
+height: 300px;
+}
+}
+
+//MODAL
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:100;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0);
+    width:100%;
+    height:100vh;
+    transition:background 0.2s ease-in-out;
+  }
+  
+  .modal .wrapper{
+    padding:0 8px;
+    width:100%;
+    max-width:500px;
+    box-sizing:border-box;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+  
+  .modal .message{
+    -webkit-transition:transform 0.2s ease-in-out;
+    -moz-transition:transform 0.2s ease-in-out;
+    -ms-transition:transform 0.2s ease-in-out;
+    -o-transition:transform 0.2s ease-in-out;
+    transition:transform 0.2s ease-in-out;
+    will-change: transform;
+    background:#FFF;
+    
+    -webkit-transform:scale(0,0);
+    -moz-transform:scale(0,0);
+    -ms-transform:scale(0,0);
+    -o-transform:scale(0,0);
+    transform:scale(0,0);
+    
+    padding:22px;
+    box-sizing:border-box;
+    box-shadow:0 11px 44px rgba(0,0,0,0.4);
+    max-width:500px;
+    width:100%;
+    border-radius:5px;
+    overflow:hidden;
+  }
+  
+  .modal .message button{float:right;}
+  
+  .modal.transition{background:rgba(0,0,0,0.5);}
+  
+  .modal.transition .message{
+    -webkit-transform:scale(1,1);
+    -moz-transform:scale(1,1);
+    -ms-transform:scale(1,1);
+    -o-transform:scale(1,1);
+    transform:scale(1,1);
+  }
+  
+  .modal.display{display:block;}
+  
+
+///SlideShow
+@mixin default($margin, $padding, $box-sizing) {
+    margin: $margin;
+    padding: $padding;
+    box-sizing: $box-sizing;
+  }
+  
+  @mixin dimension($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+  }
+  @mixin pos($position: absolute, $margin: auto, $top: auto, $bottom: auto, $left: auto, $right: auto) {
+      position: $position;
+      margin: $margin;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+  }
+  
+  @mixin otherpos($position: absolute, $margin: auto, $bottom: auto, $left: auto, $right: auto) {
+    position: $position;
+    margin: $margin;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+  }
+  
+  
+
+
+  
+    // .container {
+    //   @include dimension(100%, 100%);
+    //   position: relative;
+    //   background: #355C7D;  /* fallback for old browsers */
+    //   overflow: hidden;
+    //   img {
+    //     @include dimension(100%, 100%);
+    //     object-fit: cover;
+    //     @include pos($top: 0, $bottom: 0, $left: 0, $right: 0);
+    //     animation: fade 1s;
+    //   }
+      .arrow {
+        z-index: 10;
+        @include otherpos($bottom: 0);
+        @include dimension(1.5rem, 1.5rem);
+        font-size: 1.5rem;
+        color: $color1;
+        opacity: 0.5;
+        transition: opacity 1s;
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+      .arrow-left {
+        left: 2%;
+      }
+      .arrow-right {
+        right: 2%;
+      }
+      .dots {
+        @include otherpos($position: relative, $right: 0, $bottom: 2%);
+        @include dimension(10rem);
+        z-index: 5;
+        .dot {
+          @include dimension(2rem, 2rem);
+          display: inline-flex;
+          align-content: center;
+          justify-content: center;
+          color: $color1;
+        }
+      }
+    // }
+  
+  @keyframes fade {
+    from {opacity: 0.1}
+    to {opacity: 1}
+  }
